@@ -43,10 +43,10 @@ body{
 	flex-grow: 1;
 }
 .menu__list{
-	display: flex;/*всередені блоку флекс елементи*/
-	flex-wrap: wrap;/*якщо елементи не поміщаються у рядок вони з цією властивість мають можливість перейти на рядок нижче і так далі*/
-	column-gap: 40px; /* відступ для флекс елементів */
-	row-gap: 10px;	/* відступ для флекс елементів при зменьшенні елементи переходять на рядок нижче для і відступ між ними стає таким як вказатий у цій властивості*/
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 40px; 
+	row-gap: 10px;	
 }
 .menu__item{}
 .menu__link{
@@ -582,21 +582,7 @@ body{
 	flex-grow: 1;
 	margin-bottom: 80px;
 }
-@media (max-width:842px){
-	.events-content__cards{
-		display: flex;
-		flex-direction: column;
-		/* background-color: red; */
-		justify-content: flex-start;
-		
-		align-items: stretch;
-	}
-	.card__item{
-		flex-basis: 100%;
-		flex-grow: 1;
-		/* margin-bottom: 20px; */
-	}
-}
+
 .card__item{
 	display: flex;
 	flex-direction: column;
@@ -645,13 +631,25 @@ body{
 }
 .card__item>.btn{
 	min-height: 42px;
-	/* padding: 12px 10px; */
 	width: 100%;
 	
 }
 .events-btn-block{
 	display: flex;
 	align-items: center;
+}
+@media (max-width:842px){
+	.events-content__cards{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+	.card__item{
+		flex-basis:90%;
+		flex-grow: 0;
+	} 
 }
 @media (max-width:842px){
 	.events-btn-block{
@@ -691,7 +689,6 @@ body{
 	padding-bottom: 180px;
 	display: grid;
 	grid-template-columns:1fr 495px ;
-	row-gap: 184px;
 	grid-template-rows:repeat(2,auto);
 	align-items: flex-start;
 }
@@ -747,7 +744,7 @@ body{
 	.about-the-course__container{
 		padding-top: 60px;
 		padding-bottom: 80px;
-		row-gap: 40px;
+		row-gap: 50px;
 		grid-template-columns:1fr 1fr;
 		align-items: flex-start;
 	}
